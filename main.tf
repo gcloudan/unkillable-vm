@@ -132,6 +132,14 @@ resource "oci_core_instance" "critical_server" {
       desired_state = "ENABLED"
       name          = "Compute Instance Monitoring"
     }
+    plugins_config {
+      name          = "Compute Instance Run Command"
+      desired_state = "DISABLED"
+    }
+    plugins_config {
+      name          = "Custom Logs Monitoring"
+      desired_state = "DISABLED"
+    }
   }
 
   create_vnic_details {
